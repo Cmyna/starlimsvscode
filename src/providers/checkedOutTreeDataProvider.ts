@@ -173,7 +173,7 @@ export class CheckedOutTreeDataProvider implements vscode.TreeDataProvider<TreeE
       const checkedOutBy = pendingCheckins[i].getElementsByTagName("CHECKEDOUTBY")[0]?.childNodes[0].nodeValue?.trim();
       const childType = pendingCheckins[i].getElementsByTagName("CHILDTYPE")[0]?.childNodes[0].nodeValue?.trim();
       const parentID = pendingCheckins[i].getElementsByTagName("PARENTID")[0]?.childNodes[0].nodeValue?.trim();
-      const parentName = pendingCheckins[i].getElementsByTagName("ParentName")[0]?.childNodes[0].nodeValue?.trim();
+      const parentName = pendingCheckins[i].getElementsByTagName("PARENTNAME")[0]?.childNodes[0].nodeValue?.trim();
       const parentType = pendingCheckins[i].getElementsByTagName("PARENTTYPE")[0]?.childNodes[0].nodeValue?.trim();
       const checkedOutDate = pendingCheckins[i].getElementsByTagName("CHECKEDOUTDATE")[0]?.childNodes[0].nodeValue?.trim();
       const scriptLanguage = pendingCheckins[i].getElementsByTagName("SCRIPTLANGUAGE")[0]?.childNodes[0].nodeValue?.trim();

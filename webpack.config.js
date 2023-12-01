@@ -89,4 +89,21 @@ const webviewConfig = {
     })
   ]
 };
-module.exports = [extensionConfig, webviewConfig];
+
+/**
+ * XFD View webpack config
+ */
+const xfdView = {
+  ...baseConfig,
+  target: ["web", "es2020"],
+  entry: "./src/react-src/xfdView.ts",
+  experiments: { outputModule: true },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "xfdView.js",
+    libraryTarget: "module",
+    chunkFormat: "module"
+  }
+};
+
+module.exports = [extensionConfig, webviewConfig, xfdView];

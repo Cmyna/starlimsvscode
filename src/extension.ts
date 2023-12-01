@@ -12,6 +12,8 @@ import { GenericDataViewPanel } from "./panels/GenericDataViewPanel";
 import { cleanUrl, executeWithProgress } from "./utilities/miscUtils";
 import { CheckedOutTreeDataProvider } from "./providers/checkedOutTreeDataProvider";
 
+import * as xfdEditor from './commands/xfdEditor';
+
 const { version } = require('../package.json');
 const SLVSCODE_FOLDER = "SLVSCODE";
 
@@ -25,6 +27,9 @@ export async function activate(context: vscode.ExtensionContext) {
   let reloadConfig = false;
   let selectedItem: TreeEnterpriseItem | undefined;
   let languages: any[] = [];
+
+  
+  xfdEditor.register(context);
 
   // ensure STARLIMS URL is defined and prompt for value if not
   if (!url) {
@@ -1636,6 +1641,8 @@ export async function activate(context: vscode.ExtensionContext) {
   vscode.window.showInformationMessage(
     `Connected to STARLIMS on ${config.url}.`
   );
+
+
 }
 
 async function highlightGlobalSearchMatches(item : TreeEnterpriseItem, localUri : vscode.Uri) {
@@ -1679,6 +1686,7 @@ async function highlightGlobalSearchMatches(item : TreeEnterpriseItem, localUri 
         }
       }
     }
+  
 }
 
 // this method is called when your extension is deactivated
