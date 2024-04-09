@@ -26,6 +26,11 @@ suite('Extension Test Suite', () => {
 		assert.strictEqual(escapeXml(notEscapedString), notEscapedString)
 
 		assert.strictEqual(escapeXml(''), '') // empty string
+
+		// null/undefined?
+		const invalidData: any[] = [null, undefined]
+		assert.strictEqual(escapeXml(invalidData[0]), null)
+		assert.strictEqual(escapeXml(invalidData[1]), undefined)
 	})
 
 });

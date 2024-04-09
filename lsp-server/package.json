@@ -1,0 +1,27 @@
+{
+  "name": "lsp-server",
+  "version": "1.0.0",
+  "description": "STARLIMS vscode LSP server",
+  "scripts": {},
+  "engines": {
+    "vscode": "1.81.0"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "CMyna",
+  "license": "MIT",
+  "dependencies": {
+    "tree-sitter-ssl": "file:../../../../project/tree-sitter-starlims/tree-sitter-ssl/",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11",
+    "web-tree-sitter": "^0.22.2"
+  },
+  "overrides": {
+    "node-gyp": "^10.0.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.4"
+  }
+}
